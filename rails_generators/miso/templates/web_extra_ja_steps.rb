@@ -10,16 +10,16 @@ When /"([^\"]*)"中の"([^\"]*)"リンクをクリックする$/ do |element, la
   click_link_within(element, label)
 end
 
-When /^テーブル"([^\"]*)"の"([^\"]*)"行目の"([^\"]*)"リンクをクリックする$/ do |table, n, label|
-  selector = "table.#{cls} tbody tr:nth(#{nth})"
-  click_link_within(selector, link)
+When /^テーブル"([^\"]*)"の"([^\"]*)"行目の"([^\"]*)"リンクをクリックする$/ do |css, nth, label|
+  selector = "table.#{css} tbody tr:nth(#{nth})"
+  click_link_within(selector, label)
 end
 
-When /^デバッグ.*$/ do
+When /^デバッグのため$/ do
   save_and_open_page
 end
 
-Then /^テキストフィールドに"([^\"]*)"と表示されていること$/ do |arg1|
+Then /^テキストフィールドに"([^\"]*)"と表示されていること$/ do |text|
   response.should have_tag("input[type=text][value=#{text}]")
 end
 
