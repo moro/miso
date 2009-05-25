@@ -1,4 +1,5 @@
 *.gem
+pkg/*
 .DS_Store
 *.o
 *.lo
