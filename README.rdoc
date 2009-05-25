@@ -1,0 +1,32 @@
+
+= miso
+
+
+== Description
+
+Dip cucumber into me.
+
+rails generator which generate Japanese translated 'webrat_steps.rb' and some usefull steps.
+
+miso is a japanese popular seasoning.
+Many japanese eat fresh cucumber with miso, soybean paste.
+
+== Installation
+
+=== Archive Installation
+
+ rake install
+
+=== Gem Installation
+
+ gem install moro-miso
+
+== Synopsis
+
+ ruby script/generate miso
+
+== Copyright
+
+Author::    MOROHASHI Kyosuke <moronatural@gmail.com>
+Copyright:: Copyright (c) 2009 MOROHASHI Kyosuke
+License::   MIT
