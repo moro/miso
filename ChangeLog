@@ -1,0 +1,9 @@
+== 0.0.2 / 2009-05-24
+
+* add optional web steps to web_ext_ja_steps.rb
+
+== 0.0.1 / 2009-05-24
+
+* initial release
+* generates japanese translated webrat_steps.rb as webrat_steps_ja.rb
+
