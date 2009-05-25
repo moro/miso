@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email = %q{moronatural@gmail.com}
   s.executables = ["miso-cheat"]
   s.extra_rdoc_files = ["README.rdoc", "ChangeLog"]
-  s.files = ["README.rdoc", "ChangeLog", "Rakefile", "bin/miso-cheat", "lib/miso", "lib/miso.rb", "rails_generators/miso", "rails_generators/miso/miso_generator.rb", "rails_generators/miso/templates", "rails_generators/miso/templates/web_extra_ja_steps.rb", "rails_generators/miso/templates/webrat_ja_steps.rb"]
+  s.files = ["README.rdoc", "ChangeLog", "Rakefile", "lib/miso.rb", "rails_generators/miso/miso_generator.rb", "rails_generators/miso/templates/web_extra_ja_steps.rb", "rails_generators/miso/templates/webrat_ja_steps.rb", "bin/miso-cheat"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/moro/miso/}
   s.rdoc_options = ["--title", "miso documentation", "--charset", "utf-8", "--opname", "index.html", "--line-numbers", "--main", "README.rdoc", "--inline-source", "--exclude", "^(examples|extras)/"]

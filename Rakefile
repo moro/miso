@@ -69,7 +69,7 @@ spec = Gem::Specification.new do |s|
 	#s.required_ruby_version = '>= 1.8.2'
 
 	s.files = %w(README.rdoc ChangeLog Rakefile) +
-		Dir.glob("{bin,doc,test,lib,templates,generator,extras,website,script,rails_generators}/**/*") + 
+		Dir.glob("{bin,doc,test,lib,templates,generator,extras,website,script,rails_generators}/**/*.rb") +
 		Dir.glob("ext/**/*.{h,c,rb}") +
 		Dir.glob("examples/**/*.rb") +
 		Dir.glob("tools/*.rb") +
