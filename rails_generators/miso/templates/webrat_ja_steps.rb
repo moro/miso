@@ -98,14 +98,14 @@ Then /^"([^\"]*)"と表示されていないこと$/ do |text|
   response.should_not contain(text)
 end
 
-Then /^"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |field, value|
+Then /^入力項目"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |field, value|
   field_labeled(field).value.should =~ /#{value}/
 end
 
-Then /^"([^\"]*)"に"([^\"]*)"と表示されていないこと$/ do |field, value|
+Then /^入力項目"([^\"]*)"に"([^\"]*)"と表示されていないこと$/ do |field, value|
   field_labeled(field).value.should_not =~ /#{value}/
 end
-    
+
 Then /^"([^\"]*)"がチェックされていること$/ do |label|
   field_labeled(label).should be_checked
 end

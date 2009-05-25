@@ -4,7 +4,9 @@ class MisoGenerator < Rails::Generator::Base
   def manifest
     record do |m|
       m.directory 'features/step_definitions'
-      m.template  'webrat_ja_steps.rb', 'features/step_definitions/webrat_ja_steps.rb'
+      %w[webrat_ja_steps.rb web_ext_ja_steps.rb].each do |step|
+        m.file step, File.join('features/step_definitions', step)
+      end
     end
   end
 
