@@ -21,7 +21,7 @@ When /^"([^\"]*)"に"([^\"]*)"と入力する$/ do |field, value|
 end
 
 # opposite order from Engilsh one(original)
-When /^"([^\"]*)"から "([^\"]*)"を選択する$/ do |field, value|
+When /^"([^\"]*)"から"([^\"]*)"を選択する$/ do |field, value|
   select(value, :from => field) 
 end
 
