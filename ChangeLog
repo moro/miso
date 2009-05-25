@@ -1,3 +1,7 @@
+== 0.0.3 / 2009-05-24
+
+* add cheat command miso-cheat, display provided steps.
+
 == 0.0.2 / 2009-05-24
 
 * add optional web steps to web_ext_ja_steps.rb

@@ -24,7 +24,7 @@ if use_rubyforge
 else
   HOMEPAGE          = "http://github.com/moro/#{NAME}/"
 end
-BIN_FILES         = %w(  )
+BIN_FILES         = %w(miso-cheat )
 
 VERS              = Miso::Version
 REV = File.read(".svn/entries")[/committed-rev="(d+)"/, 1] rescue nil
