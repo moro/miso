@@ -1,0 +1,13 @@
+*.gem
+.DS_Store
+*.o
+*.lo
+*.mo
+*.la
+*.rej
+.*~
+*~
+.#*
+*.sw[po]
+tags
+
