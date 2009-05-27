@@ -1,3 +1,7 @@
+== 0.0.4 / 2009-05-27
+
+* use webrat original steps via Given/When/Then from jp. steps.
+
 == 0.0.3 / 2009-05-24
 
 * add cheat command miso-cheat, display provided steps.
