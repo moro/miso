@@ -16,8 +16,28 @@ When /^"([^\"]*)"リンクをクリックする$/ do |link|
   When %Q(I follow "#{link}")
 end
 
+# Order is opposite from original (English) version
+When /^"([^\"]*)"の"([^\"]*)"リンクをクリックする$/ do |parent, link|
+  When %Q(I follow "#{link}" within "#{parent}")
+end
+
 When /^"([^\"]*)"に"([^\"]*)"と入力する$/ do |field, value|
   When %Q(I fill in "#{field}" with "#{value}")
+end
+
+# Use this to fill in an entire form with data from a table. Example:
+#
+#   When I fill in the following:
+#     | Account Number | 5002       |
+#     | Expiry date    | 2009-11-01 |
+#     | Note           | Nice guy   |
+#     | Wants Email?   |            |
+#
+# TODO: Add support for checkbox, select og option
+# based on naming conventions.
+#
+When /^以下の項目を入力する:$/ do |fields|
+  When %Q(I fill in the following:), fields
 end
 
 # opposite order from Engilsh one(original)
@@ -94,8 +114,16 @@ Then /^"([^\"]*)"と表示されていること$/ do |text|
   Then %Q(I should see "#{text}")
 end
 
+Then /^\/([^\/]*)\/と表示されていること$/ do |regexp|
+  Then %Q(I should see /#{regexp}/)
+end
+
 Then /^"([^\"]*)"と表示されていないこと$/ do |text|
   Then %Q(I should not see "#{text}")
+end
+
+Then /^\/([^\/]*)\/と表示されていないこと$/ do |regexp|
+  Then %Q(I should not see /#{regexp}/)
 end
 
 Then /^入力項目"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |field, value|
@@ -110,7 +138,14 @@ Then /^"([^\"]*)"がチェックされていること$/ do |label|
   Then %Q(the "#{label}" checkbox should be checked)
 end
 
+Then /^"([^\"]*)"がチェックされていないこと$/ do |label|
+  Then %Q(the "#{label}" checkbox should not be checked)
+end
+
 Then /^"([^\"]*)"ページを表示していること$/ do |page_name|
   Then %Q(I should be on #{page_name})
 end
 
+Then /^ページを表示する$/ do
+  Then %Q(show me the page)
+end
