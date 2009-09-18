@@ -49,27 +49,27 @@ end
 # When I select "2:20PM" as the time
 # Note: Rail's default time helper provides 24-hour time-- not 12 hour time. Webrat
 # will convert the 2:20PM to 14:20 and then select it. 
-When /^日付として"([^\"]*)"を選択する$/ do |time|
+When /^時間として"([^\"]*)"を選択する$/ do |time|
   When %Q(I select "#{time}" as the time)
 end
 
 # Use this step when using multiple time_select helpers on a page or you want to
 # specify the name of the time on the form.  For example:
 # When I select "7:30AM" as the "Gym" time
-When /^"([^\"]*)"の日付として"([^\"]*)"を選択する$/ do |time_label, time|
+When /^"([^\"]*)"の時間として"([^\"]*)"を選択する$/ do |time_label, time|
   When %Q(I select "#{time_label}" as the "#{time}" time)
 end
 
 # Use this step in conjunction with Rail's date_select helper.  For example:
 # When I select "February 20, 1981" as the date
-When /^時間として"([^\"]*)"を選択する$/ do |date|
+When /^日付として"([^\"]*)"を選択する$/ do |date|
   When %Q(I select "#{date}" as the date)
 end
 
 # Use this step when using multiple date_select helpers on one page or
 # you want to specify the name of the date on the form. For example:
 # When I select "April 26, 1982" as the "Date of Birth" date
-When /^"([^\"]*)"の時間として"([^\"]*)"を選択する$/ do |date_label, date|
+When /^"([^\"]*)"の日付として"([^\"]*)"を選択する$/ do |date_label, date|
   When %Q(I select "#{datetime_label}" as the "#{date}" date)
 end
 
