@@ -1,3 +1,9 @@
+== 0.0.5 / 2009-09-29
+
+* merge l15n's changes, thanx.
+* Update to match webrat steps in cucumber 0.3.101
+* Fix translation of date and time
+
 == 0.0.4 / 2009-05-27
 
 * use webrat original steps via Given/When/Then from jp. steps.
