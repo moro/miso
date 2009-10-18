@@ -11,7 +11,7 @@ require 'lib/miso'
 include FileUtils
 
 use_rubyforge = false
-NAME              = "miso"
+NAME              = "moro-miso"
 AUTHOR            = "MOROHASHI Kyosuke"
 EMAIL             = "moronatural@gmail.com"
 DESCRIPTION       = "dip cukes into me."
@@ -22,7 +22,7 @@ if use_rubyforge
   RUBYFORGE_PROJECT = "miso"
   HOMEPAGE          = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
 else
-  HOMEPAGE          = "http://github.com/moro/#{NAME}/"
+  HOMEPAGE          = "http://github.com/moro/miso/"
 end
 BIN_FILES         = %w(miso-cheat )
 

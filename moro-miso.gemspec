@@ -1,12 +1,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{miso}
-  s.version = "0.0.5"
+  s.name = %q{moro-miso}
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["MOROHASHI Kyosuke"]
-  s.date = %q{2009-09-29}
+  s.date = %q{2009-10-18}
   s.default_executable = %q{miso-cheat}
   s.description = %q{dip cukes into me.}
   s.email = %q{moronatural@gmail.com}
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README.rdoc", "ChangeLog"]
   s.files = ["README.rdoc", "ChangeLog", "Rakefile", "lib/miso.rb", "rails_generators/miso/miso_generator.rb", "rails_generators/miso/templates/web_extra_ja_steps.rb", "rails_generators/miso/templates/webrat_ja_steps.rb", "bin/miso-cheat"]
   s.homepage = %q{http://github.com/moro/miso/}
-  s.rdoc_options = ["--title", "miso documentation", "--charset", "utf-8", "--opname", "index.html", "--line-numbers", "--main", "README.rdoc", "--inline-source", "--exclude", "^(examples|extras)/"]
+  s.rdoc_options = ["--title", "moro-miso documentation", "--charset", "utf-8", "--opname", "index.html", "--line-numbers", "--main", "README.rdoc", "--inline-source", "--exclude", "^(examples|extras)/"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{dip cukes into me.}
