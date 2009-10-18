@@ -114,16 +114,36 @@ Then /^"([^\"]*)"と表示されていること$/ do |text|
   Then %Q(I should see "#{text}")
 end
 
+# opposite order from English definition
+Then /^"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |selector, text|
+  Then %Q(I should see "#{text}" within "#{selector}")
+end
+
 Then /^\/([^\/]*)\/と表示されていること$/ do |regexp|
   Then %Q(I should see /#{regexp}/)
+end
+
+# opposite order from English definition
+Then /^"([^\"]*)"に\/([^\/]*)\/と表示されていること$/ do |selector, regexp|
+  Then %Q(I should see \/#{regexp}\/ within "#{selector}")
 end
 
 Then /^"([^\"]*)"と表示されていないこと$/ do |text|
   Then %Q(I should not see "#{text}")
 end
 
+# opposite order from English definition
+Then /^"([^\"]*)"に"([^\"]*)"と表示されていないこと$/ do |selector, text|
+  Then %Q(I should not see "#{text}" within "#{selector}")
+end
+
 Then /^\/([^\/]*)\/と表示されていないこと$/ do |regexp|
   Then %Q(I should not see /#{regexp}/)
+end
+
+# opposite order from English definition
+Then /^"([^\"]*)"に\/([^\/]*)\/と表示されていないこと$/ do |selector, regexp|
+  Then %Q(I should not see \/#{regexp}\/ within "#{selector}")
 end
 
 Then /^入力項目"([^\"]*)"に"([^\"]*)"と表示されていること$/ do |field, value|
