@@ -46,13 +46,13 @@ When /^"([^\"]*)"から"([^\"]*)"を選択する$/ do |field, value|
 end
 
 # Use this step in conjunction with Rail's datetime_select helper. For example:
-# When I select "December 25, 2008 10:00" as the date and time 
+# When I select "December 25, 2008 10:00" as the date and time
 # TODO 日本語が変だ
 When /^日時として"([^\"]*)"を選択する$/ do |time|
   When %Q(I select "#{time}" as the date and time)
 end
 
-# Use this step when using multiple datetime_select helpers on a page or 
+# Use this step when using multiple datetime_select helpers on a page or
 # you want to specify which datetime to select. Given the following view:
 #   <%= f.label :preferred %><br />
 #   <%= f.datetime_select :preferred %>
@@ -68,7 +68,7 @@ end
 # Use this step in conjunction with Rail's time_select helper. For example:
 # When I select "2:20PM" as the time
 # Note: Rail's default time helper provides 24-hour time-- not 12 hour time. Webrat
-# will convert the 2:20PM to 14:20 and then select it. 
+# will convert the 2:20PM to 14:20 and then select it.
 When /^時間として"([^\"]*)"を選択する$/ do |time|
   When %Q(I select "#{time}" as the time)
 end
