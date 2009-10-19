@@ -15,11 +15,6 @@ When /^テーブル"([^\"]*)"の"([^\"]*)"行目の"([^\"]*)"リンクをクリ�
   click_link_within(selector, label)
 end
 
-When /^デバッグのため$/ do
-  save_and_open_page
-end
-
 Then /^テキストフィールドに"([^\"]*)"と表示されていること$/ do |text|
   response.should have_tag("input[type=text][value=#{text}]")
 end
-

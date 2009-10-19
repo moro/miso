@@ -166,6 +166,7 @@ Then /^"([^\"]*)"ページを表示していること$/ do |page_name|
   Then %Q(I should be on #{page_name})
 end
 
-Then /^ページを表示する$/ do
-  Then %Q(show me the page)
-end
+show_me_the_page = lambda { Then %Q(show me the page) }
+Then(/^ページを表示する$/, &show_me_the_page)
+Then(/^デバッグのため$/, &show_me_the_page)
+Then(/^画面を目視$/, &show_me_the_page)
