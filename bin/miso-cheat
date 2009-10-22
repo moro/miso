@@ -2,13 +2,18 @@
 # coding: utf-8
 # vim:set ft=ruby:
 
+require 'rubygems'
+require 'cucumber'
+require 'erb'
+
 if RUBY_VERSION < "1.9.0"
   $KCODE = "u"
 end
 
 module Miso
   class Cheat
-    def initialize
+    def initialize(step)
+      @step = step
       @container = {:Given => [], :Then => [], :When => []}
     end
 
@@ -18,12 +23,22 @@ module Miso
     def When(re, *noop);  @container[:When] << re; end
     def Then(re, *noop);  @container[:Then] << re; end
 
+    def parse!
+      begin
+        instance_eval File.read(@step)
+      rescue SyntaxError
+        instance_eval ERB.new(File.read(@step), nil, "-").result(binding)
+      end
+      self
+    end
+
     def display
       [:Given, :When, :Then].each do |type|
         @container[type].each{|step_re| puts format(type, step_re) }
         puts # blank line
       end
     end
+
     private
     def cleanup(regexp)
       regexp.to_s.sub(/\A\(\?-mix:(.+)\)\Z/){ $1 }
@@ -32,13 +47,24 @@ module Miso
     def format(type, re)
       "  #{type.to_s}\t #{cleanup(re)}" 
     end
+
+    def framework
+      :rspec
+    end
+
+    def self.display(gem)
+      gem_path = File.join(gem.installation_path, "gems", gem.original_name)
+      Dir.glob(File.join(gem_path, "rails_generators/*/templates/**/*_steps.rb")) do |step|
+        puts "in `%s`:" % step
+        cheat = Miso::Cheat.new(step)
+        cheat.parse!.display
+      end
+    end
   end
 end
 
-Dir.glob( File.expand_path("../rails_generators/miso/templates/*_steps.rb", File.dirname(__FILE__)) ) do |step|
-  cheat = Miso::Cheat.new
-  cheat.instance_eval File.read(step)
-  puts "in `%s`:" % step
-  cheat.display
+%w[moro-miso cucumber].each do |gname|
+  name, gem = Gem.source_index.select{|n, g| g.name == gname}.max_by{|n, g| g.version}
+  Miso::Cheat.display(gem)
 end
 
