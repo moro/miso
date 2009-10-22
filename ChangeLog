@@ -1,3 +1,7 @@
+== 0.0.7 / 2009-10-22
+* cleanup 'show me the page' vocabularies.
+* miso-cheat now display cucumber's webrat_steps.rb
+
 == 0.0.6 / 2009-10-18
 * fix homepage URL / thanx http://twitter.com/sanemat/status/4946907169
 
