@@ -54,7 +54,7 @@ module Miso
 
     def self.display(gem)
       gem_path = File.join(gem.installation_path, "gems", gem.original_name)
-      Dir.glob(File.join(gem_path, "rails_generators/*/templates/**/*_steps.rb")) do |step|
+      Dir.glob(File.join(gem_path, "generators/*/templates/**/*_steps.rb")) do |step|
         puts "in `%s`:" % step
         cheat = Miso::Cheat.new(step)
         cheat.parse!.display
@@ -63,7 +63,7 @@ module Miso
   end
 end
 
-%w[moro-miso cucumber].each do |gname|
+%w[moro-miso cucumber-rails].each do |gname|
   name, gem = Gem.source_index.select{|n, g| g.name == gname}.max_by{|n, g| g.version}
   Miso::Cheat.display(gem)
 end

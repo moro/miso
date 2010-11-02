@@ -65,11 +65,11 @@ spec = Gem::Specification.new do |s|
 	s.require_path      = "lib"
 	s.test_files        = Dir["test/*_test.rb"]
 
-	#s.add_dependency('activesupport', '>=1.3.1')
+	s.add_dependency('cucumber-rails', '>=0.2.4')
 	#s.required_ruby_version = '>= 1.8.2'
 
 	s.files = %w(README.rdoc ChangeLog Rakefile) +
-		Dir.glob("{bin,doc,test,lib,templates,generator,extras,website,script,rails_generators}/**/*.rb") +
+		Dir.glob("{bin,doc,test,lib,templates,generator,extras,website,script,generators}/**/*.rb") +
 		Dir.glob("ext/**/*.{h,c,rb}") +
 		Dir.glob("examples/**/*.rb") +
 		Dir.glob("tools/*.rb") +

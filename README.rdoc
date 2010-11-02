@@ -1,6 +1,10 @@
 
 = miso
 
+== Caution!!!
+
+This library's main features is merged to Cucumber-Rails(>=0.3.2).
+I'm planning another idea of this, but for now, this is useless.
 
 == Description
 
